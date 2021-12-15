@@ -1,0 +1,27 @@
+﻿@model ToDoItem
+
+<form asp-action="Update" method="post">
+    <div>
+        <label class="control-label">Assign To:</label>
+        <select asp-for="AssignedTo">
+            @foreach (Employee e in Model.AllEmployees)
+            {
+                <option value="@e.Id">@e.FullName</option>
+            }
+        </select>
+
+    </div>
+    <div>
+        <label asp-for="HoursNeeded"></label>
+        <input asp-for="HoursNeeded" class="form-control" />
+    </div>
+    <div>
+        <label>Task Name:</label>
+        <input asp-for="TName" class="form-control" />
+    </div>
+    <div>
+        <label class="control-label">Task Description:</label>
+        <textarea asp-for="TDescription" class="form-control"></textarea>
+    </div>
+    <input type="submit" value="Update" /><a asp-action="Index" asp-controller="ToDoItem"><input type="button" value="cancel"/></a>
+</form>

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ToDoItem>
+    <a asp-action="Create" asp-controller="ToDoItem">Create New ToDo Item</a> || <a asp-action="AssignTask" asp-controller="ToDoItem">Assign ToDo Item</a>
+@foreach (ToDoItem tdi in Model)
+            {
+                <div style="border:3px solid black">
+                    <p>id: @tdi.Id<br/> Task Duration: @tdi.HoursNeeded <br/> Complete: @tdi.IsCompleted</p>
+                    <p>Task Name: @tdi.TName</p>
+                    <p>Description: <br/> @tdi.TDescription</p>
+                    <a asp-action="Update" asp-controller="ToDoItem" asp-route-id="@tdi.Id">Edit</a>||<a asp-action="MarkComplete" asp-controller="ToDoItem" asp-route-id="@tdi.Id">Mark Complete</a>
+                </div>
+            }
+

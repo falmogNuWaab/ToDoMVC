@@ -1,0 +1,10 @@
+﻿@model Employee
+
+<h2>Are you sure?</h2>
+<div style="border:3px solid black">
+    <p>id: @Model.Id</p>
+    <p>Name: @Model.FullName</p>
+    <p>Title: @Model.Title</p>
+    <p>Hours: @Model.Hours</p>
+    <a asp-action="DeleteConfirmed" asp-controller="Employee" asp-route-id="@Model.Id">Delete</a> <a asp-action="Index" asp-controller="Employee">Cancel</a>
+</div>

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Employee>
+<a asp-action="Create" asp-controller="Employee">Create New Employee Record</a>
+@foreach(Employee e in Model)
+            {
+                <div style="border:3px solid black">
+                    <p>id: @e.Id</p>
+                    <p>Name: @e.FullName</p>
+                    <p>Title: @e.Title</p>
+                    <p>Hours: @e.Hours</p>
+                    <a asp-action="Update" asp-controller="Employee" asp-route-id="@e.Id">Update</a>||<a asp-action="Delete" asp-controller="Employee" asp-route-id="@e.Id">Delete</a>
+                </div>
+            }

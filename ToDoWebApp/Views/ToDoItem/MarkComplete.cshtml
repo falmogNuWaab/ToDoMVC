@@ -1,0 +1,6 @@
+﻿@model ToDoItem
+
+<h2>Confirm Completion</h2>
+<p>id: @Model.Id</p>
+<p>Task Name: @Model.TName</p>
+<a asp-action="CompletionConfirmed" asp-controller="ToDoItem" asp-route-id="@Model.Id"><button>Task Complete</button></a><a asp-action="Index" asp-controller="ToDoItem"><button>Cancel</button></a>

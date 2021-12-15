@@ -1,0 +1,8 @@
+﻿@model ToDoItem
+<h2>Are you sure?</h2>
+<div style="border:3px solid black">
+    <p>id: @Model.Id<br /> Task Duration: @Model.HoursNeeded <br /> Completed: @Model.IsCompleted</p>
+    <p>Task Name: @Model.TName</p>
+    <p>Description: <br /> @Model.TDescription</p>
+    <a asp-action="DeleteConfirmed" asp-controller="ToDoItem" asp-route-id="@Model.Id">Delete</a>|<a asp-action="Index" asp-controller="ToDoItem">Cancel</a>
+</div>

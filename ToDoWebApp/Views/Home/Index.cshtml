@@ -1,0 +1,23 @@
+﻿@model EmployeeTaskViewModel
+@{
+    ViewData["Title"] = "MT ToDo";
+}
+
+<div class="text-center">
+<div style="display:inline-block">
+        @foreach(Employee e in Model.Employees)
+            {
+                <div style="border:2px solid black;height:auto;">
+                    <p>Name: @e.FullName</p>
+                </div>
+            }
+</div>
+<div style="display:inline-block">
+    @foreach (ToDoItem t in Model.ToDos)
+    {
+        <div style="border:2px solid black;height:auto;">
+            <p>Task: @t.TName</p>
+        </div>
+    }
+</div>
+</div>

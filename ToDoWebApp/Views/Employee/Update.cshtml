@@ -1,0 +1,19 @@
+﻿@model Employee
+
+Available Hours: @Model.AvailHours  
+<form asp-action="Update" method="Post">
+    <div>
+        <label asp-for="FullName" class="control-label"></label>
+        <input asp-for="FullName" class="form-control"/>
+    </div>
+    <div>
+        <label asp-for="Hours" class="control-label"></label>
+        <input asp-for="Hours" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+
+    <input type="submit" />
+</form>
